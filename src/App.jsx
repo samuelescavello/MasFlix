@@ -6,10 +6,11 @@ import TopRatedPage from "./Components/TopRatedPage/TopRatedPage";
 import FavoritesPage from "./Components/FavoritesPage/FavoritesPage";
 import SearchResultsPage from "./Components/SearchResultsPage/SearchResultsPage";
 import { Routes, Route } from "react-router-dom";
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 function App() {
   return (
-    <>
+    <FavoritesProvider>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -18,7 +19,7 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/search" element={<SearchResultsPage />} />
       </Routes>
-    </>
+    </FavoritesProvider>
   );
 }
 
