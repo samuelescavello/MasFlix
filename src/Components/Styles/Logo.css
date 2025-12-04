@@ -1,0 +1,11 @@
+.logo {
+  color: #e50914;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #ff0d19;
+}

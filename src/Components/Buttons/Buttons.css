@@ -1,0 +1,65 @@
+/* Base button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+/* -------- Variants -------- */
+
+.btn-primary {
+  background: #e50914;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #f6121d;
+}
+
+/* Secondario (outline) */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #e50914;
+  color: #e50914;
+}
+
+.btn-secondary:hover {
+  background: #e50914;
+  color: white;
+}
+
+/* Ghost (trasparente) */
+.btn-ghost {
+  background: transparent;
+  color: white;
+}
+
+.btn-ghost:hover {
+  color: #e50914;
+}
+
+/* -------- Sizes -------- */
+
+.btn-sm {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.btn-md {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.btn-lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+}

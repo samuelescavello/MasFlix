@@ -1,0 +1,34 @@
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.95);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 2rem;
+  z-index: 2000;
+}
+
+.mobile-close-btn {
+  align-self: flex-end;
+
+  font-size: 2rem;
+  color: white;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-search {
+  width: 100%;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
