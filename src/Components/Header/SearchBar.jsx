@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim()) return;
-    console.log("Ricerca per:", query);
-    alert(`Ricerca per: ${query}`);
+
+    navigate(`/search?q=${encodeURIComponent(query)}`);
     setQuery("");
   };
 

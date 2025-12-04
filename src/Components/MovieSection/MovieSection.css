@@ -20,6 +20,22 @@
   justify-items: center;
 }
 
+.loading,
+.error {
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.loading {
+  color: #9ca3af;
+}
+
 @media (max-width: 768px) {
   .movie-section {
     padding: 20px 10px;

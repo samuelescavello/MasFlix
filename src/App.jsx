@@ -1,24 +1,11 @@
 import "./App.css";
 import HomePage from "./Components/HomePage/HomePage";
 import Header from "./Components/Header/Header";
+import TrendingPage from "./Components/TrendingPage/TrendingPage";
+import TopRatedPage from "./Components/TopRatedPage/TopRatedPage";
+import FavoritesPage from "./Components/FavoritesPage/FavoritesPage";
+import SearchResultsPage from "./Components/SearchResultsPage/SearchResultsPage";
 import { Routes, Route } from "react-router-dom";
-
-// Componenti temporanei per le rotte
-const TrendingPage = () => (
-  <main>
-    <h1>Trending Movies</h1>
-  </main>
-);
-const TopRatedPage = () => (
-  <main>
-    <h1>Top Rated Movies</h1>
-  </main>
-);
-const FavoritesPage = () => (
-  <main>
-    <h1>I tuoi Preferiti</h1>
-  </main>
-);
 
 function App() {
   return (
@@ -29,6 +16,7 @@ function App() {
         <Route path="/trending" element={<TrendingPage />} />
         <Route path="/top-rated" element={<TopRatedPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/search" element={<SearchResultsPage />} />
       </Routes>
     </>
   );
