@@ -1,7 +1,5 @@
-import Logo from "./Logo";
-import Navigation from "./Navigations";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import UserMenu from "./UserMenu";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import "./Header.css";
@@ -11,22 +9,35 @@ export default function Header() {
 
   return (
     <header className="header">
-      {/* LOGO */}
-      <Logo />
+      <div className="link">MoVieFlix</div>
 
       {/* NAV DESKTOP */}
       <nav className="nav-desktop">
-        <Navigation />
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="/trending" className="nav-link">
+          Trending
+        </Link>
+        <Link to="/top-rated" className="nav-link">
+          Top Rated
+        </Link>
+        <Link to="/favorites" className="nav-link">
+          Preferiti
+        </Link>
       </nav>
 
       {/* SEARCH + USER */}
       <div className="search-user-container">
         <SearchBar />
-        <UserMenu />
+        <div className="user-menu">👤</div>
       </div>
 
       {/* MOBILE MENU BUTTON */}
-      <button className="mobile-menu-button" onClick={() => setMobileOpen(!mobileOpen)}>
+      <button
+        className="mobile-menu-button"
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
         ☰
       </button>
 
