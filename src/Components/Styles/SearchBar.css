@@ -1,0 +1,28 @@
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  padding: 0.4rem 2.2rem 0.4rem 0.6rem;
+  border-radius: 4px;
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid #333;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #e50914;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

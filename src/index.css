@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Aggiungo padding-top per evitare che il contenuto vada sotto l'header fisso */
+main {
+  padding-top: 80px;
+}

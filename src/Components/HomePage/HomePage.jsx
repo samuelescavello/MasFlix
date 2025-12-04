@@ -2,8 +2,8 @@ import MovieSection from "../MovieSection/MovieSection";
 
 export default function HomePage() {
   return (
-    <div>
+    <main>
       <MovieSection />
-    </div>
+    </main>
   );
 }
