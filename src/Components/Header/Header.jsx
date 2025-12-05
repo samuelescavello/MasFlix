@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import logo from "../../assets/logo.png";
 import "./Header.css";
 
 export default function Header() {
