@@ -5,6 +5,7 @@ import TrendingPage from "./Components/TrendingPage/TrendingPage";
 import TopRatedPage from "./Components/TopRatedPage/TopRatedPage";
 import FavoritesPage from "./Components/FavoritesPage/FavoritesPage";
 import SearchResultsPage from "./Components/SearchResultsPage/SearchResultsPage";
+import Footer from "./Components/Footer/Footeer";
 import { Routes, Route } from "react-router-dom";
 import { FavoritesProvider } from "./context/FavoritesContext";
 
@@ -19,10 +20,9 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/search" element={<SearchResultsPage />} />
       </Routes>
+      <Footer />
     </FavoritesProvider>
   );
 }
 
 export default App;
-
-// --- IGNORE ---

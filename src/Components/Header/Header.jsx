@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import logo from "../../assets/logo.png";
 import "./Header.css";
 
 export default function Header() {
@@ -9,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="link">MoVieFlix</div>
+      <div className="link">MasFlix</div>
 
       {/* NAV DESKTOP */}
       <nav className="nav-desktop">

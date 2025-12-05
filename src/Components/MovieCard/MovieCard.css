@@ -1,22 +1,57 @@
-/* MovieCard Styles */
+/* Container per la griglia */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1400px) {
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .movies-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
 .movie-card {
-  background-color: #1a1a1a;
+  background-color: #0f0f0f;
+  border: 1px solid #333;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s;
-  max-width: 300px;
-  margin: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Altezza uguale per tutte le card */
 }
 
 .movie-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  border-color: #555;
+  transform: translateY(-2px);
 }
 
 .movie-poster-container {
   position: relative;
   height: 400px;
   overflow: hidden;
+  flex-shrink: 0; /* Impedisce al poster di ridursi */
 }
 
 .movie-poster {
@@ -42,57 +77,6 @@
   font-size: 14px;
 }
 
-.movie-info {
-  padding: 20px;
-}
-
-.movie-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 8px;
-}
-
-.movie-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  flex: 1;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.movie-year {
-  color: #9ca3af;
-  font-size: 14px;
-  margin-left: 8px;
-  flex-shrink: 0;
-}
-
-.movie-genre-container {
-  margin-bottom: 12px;
-}
-
-.movie-genre {
-  display: inline-block;
-  background-color: #374151;
-  color: #d1d5db;
-  font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 20px;
-}
-
-.movie-description {
-  color: #9ca3af;
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 16px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 /* Favorite button on poster */
 .favorite-btn {
   position: absolute;
@@ -110,6 +94,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
+  z-index: 10;
 }
 
 .favorite-btn:hover {
@@ -121,47 +106,123 @@
   background: rgba(220, 38, 38, 0.9);
 }
 
+.movie-info {
+  padding: 20px;
+  background-color: #0a0a0a;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Occupa tutto lo spazio rimanente */
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  min-height: 48px; /* Altezza minima per titoli corti */
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  flex: 1;
+  margin: 0;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Massimo 2 righe per il titolo */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-year {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.movie-genre-container {
+  margin-bottom: 12px;
+  min-height: 28px; /* Altezza fissa per mantenere allineamento */
+}
+
+.movie-genre {
+  display: inline-block;
+  background-color: #374151;
+  color: #d1d5db;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.movie-description {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Esattamente 3 righe */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 60px; /* Altezza fissa per 3 righe (14px * 1.4 * 3) */
+  flex-grow: 1; /* Spinge i bottoni verso il basso */
+}
+
 /* Action buttons container */
 .movie-actions {
   display: flex;
   gap: 8px;
+  margin-top: auto; /* Spinge i bottoni verso il basso */
 }
 
 .movie-details-btn {
   flex: 1;
-  background-color: #dc2626;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
-  font-weight: 600;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 4px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border: 2px solid #ef4444;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .movie-details-btn:hover {
-  background-color: #b91c1c;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  border-color: #f87171;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.5);
+  scale: 1.02;
 }
 
 .movie-favorite-btn {
   flex: 1;
-  background-color: transparent;
-  color: #dc2626;
-  font-weight: 600;
-  padding: 10px 16px;
-  border: 2px solid #dc2626;
-  border-radius: 4px;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-weight: 700;
+  padding: 14px 20px;
+  border: 2px solid #ef4444;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
 }
 
 .movie-favorite-btn:hover {
-  background-color: #dc2626;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  scale: 1.02;
 }
 
 .movie-favorite-btn.favorite {
