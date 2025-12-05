@@ -2,16 +2,16 @@
 .movie-section {
   min-height: 100vh;
   background-color: #030712;
-  padding: 48px 16px;
+   padding: 48px 16px;   
 }
 
 .movie-section-container {
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  margin: 0 auto; 
 }
 
 .movie-section-header {
-  margin-bottom: 40px;
+  margin-bottom: 40px; 
 }
 
 .section-title {
@@ -19,7 +19,7 @@
   font-weight: bold;
   color: white;
   margin-bottom: 8px;
-  margin-top: 30px;
+   margin-top: 30px;
 }
 
 .section-subtitle {

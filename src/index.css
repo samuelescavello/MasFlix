@@ -12,5 +12,5 @@ body {
 
 /* Aggiungo padding-top per evitare che il contenuto vada sotto l'header fisso */
 main {
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
