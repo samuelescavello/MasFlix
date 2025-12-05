@@ -15,7 +15,9 @@ const TopRatedPage = () => {
     const fetchTopRatedMovies = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=it-IT`);
+        const response = await fetch(
+          `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=it-IT`
+        );
 
         if (!response.ok) {
           throw new Error("Errore nel caricamento dei film più votati");
@@ -59,9 +61,18 @@ const TopRatedPage = () => {
         {movies.map((movie) => (
           <MovieCard
             key={movie.id}
+            movie={movie}
             title={movie.title}
-            poster={movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : "https://via.placeholder.com/500x750?text=No+Image"}
-            year={movie.release_date ? new Date(movie.release_date).getFullYear() : "N/A"}
+            poster={
+              movie.poster_path
+                ? `${IMAGE_BASE_URL}${movie.poster_path}`
+                : "https://via.placeholder.com/500x750?text=No+Image"
+            }
+            year={
+              movie.release_date
+                ? new Date(movie.release_date).getFullYear()
+                : "N/A"
+            }
             rating={movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
             genre="Film"
             description={movie.overview || "Nessuna descrizione disponibile"}
